@@ -70,6 +70,7 @@ window.addEventListener('load', function () {
       sponsers[0].logos.shift();
       if (!sponsers[0].logos.length) sponsers.shift();
       setRandom();
+      $(window).scrollTop(0)
    }
 
 });
