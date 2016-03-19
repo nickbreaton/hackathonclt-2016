@@ -1,4 +1,4 @@
-window.addEventListener('load', function () {
+function game () {
    var current = {};
 
    var ref = new Firebase("https://hackathonclt2016.firebaseio.com/");
@@ -29,7 +29,7 @@ window.addEventListener('load', function () {
             });
             remaining--;
             if (remaining === 0) {
-               $('.hide').removeClass('hide');
+              //  $('.hide').removeClass('hide');
                setRandom();
             }
          });
@@ -59,12 +59,21 @@ window.addEventListener('load', function () {
             // addScore();
             nextFood();
             next();
+            firebaseCount();
             Materialize.fadeInImage('#logo')
          } else {
             input.addClass('invalid');
             // error();
          }
       }
+   }
+
+   function firebaseCount() {
+     ref.child('stats/count').once('value', function (data) {
+       ref.child('stats').set({
+         count: data.val() + Math.floor(Math.random() * 5) + 1
+       });
+     });
    }
 
    function next () {
@@ -119,4 +128,4 @@ window.addEventListener('load', function () {
       }, delay);
    }
 
-});
+}
