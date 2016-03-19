@@ -37,6 +37,7 @@ window.addEventListener('load', function () {
    }
 
    $(document).keydown(function (event) {
+      input.removeClass('invalid');
       if (event.which === 13) {
          checkAnswer();
       }
@@ -49,7 +50,7 @@ window.addEventListener('load', function () {
 
    function setRandom () {
       current = sponsers[0].logos[0];
-      img.attr('src', current.url);
+      img.attr('src', current.url); 
    }
 
    function checkAnswer () {
@@ -58,6 +59,7 @@ window.addEventListener('load', function () {
             // addScore();
             next();
          } else {
+            input.addClass('invalid');
             // error();
          }   
       }
