@@ -17,6 +17,7 @@ window.addEventListener('load', function () {
   });
   page('/coupon', function () {
     app.route = 'coupon';
+    coupon();
     reload();
   });
   page('/food-storage', function () {
