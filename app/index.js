@@ -4,6 +4,7 @@ window.addEventListener('load', function () {
    var ref = new Firebase("https://hackathonclt2016.firebaseio.com/");
    var img = $('img');
    var input = $('input[type="text"]')
+   var skip = $('#skip');
 
    var sponsers = [];
    ref.child('sponsers').once('value', function (data) {
@@ -13,10 +14,10 @@ window.addEventListener('load', function () {
             logos: []
          });
       });
-      next();
+      load();
    });
 
-   function next () {
+   function load () {
       sponsers.forEach(function (sponser) {
          ref.child('sponsers/' + sponser.name).once('value', function (data) {
             data.forEach(function (logo) {
@@ -39,6 +40,11 @@ window.addEventListener('load', function () {
       }
    });
 
+   skip.click(function (e) {
+      e.preventDefault();
+      next();
+   });
+
    function setRandom () {
       current = sponsers[0].logos[0];
       img.attr('src', current.url);
@@ -48,16 +54,18 @@ window.addEventListener('load', function () {
       if (input.val()) {
          if (current.name === input.val().toLowerCase()) {
             // addScore();
-            input.val(null);
-            sponsers[0].logos.shift();
-            if (!sponsers[0].logos.length) sponsers.shift();
-            setRandom();
+            next();
          } else {
             // error();
          }   
       }
    }
 
-   
+   function next () {
+      input.val(null);
+      sponsers[0].logos.shift();
+      if (!sponsers[0].logos.length) sponsers.shift();
+      setRandom();
+   }
 
 });
