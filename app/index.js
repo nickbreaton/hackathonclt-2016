@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
    var current = {};
 
    var ref = new Firebase("https://hackathonclt2016.firebaseio.com/");
-   var img = $('img');
+   var img = $('#logo');
    var input = $('input[type="text"]')
    var skip = $('#skip');
 
@@ -57,6 +57,7 @@ window.addEventListener('load', function () {
       if (input.val()) {
          if (current.name === input.val().toLowerCase()) {
             // addScore();
+            nextFood();
             next();
          } else {
             input.addClass('invalid');
@@ -71,6 +72,44 @@ window.addEventListener('load', function () {
       if (!sponsers[0].logos.length) sponsers.shift();
       setRandom();
       $(window).scrollTop(0)
+   }
+
+   var foodR = 0;
+   var foodC = 0;
+   function nextFood () {
+      for (var i = 0; i < 10; i++) {
+         if (foodR === 10) {
+            foodR = 0;
+            foodC++;
+         }
+         setFood(foodR, foodC, Math.floor(Math.random() * 500));
+         foodR++;   
+      }
+   }
+
+   function setFood (i, j, delay) {
+      var x = Math.random()*2 + - 1 + (i * 10);
+      var y = Math.random()*2 + - 1 + (j * 10) + 125;
+      var id = 'food-' + Math.random().toString(30).substring(15);
+
+      $('<div/>', {
+          id: id,
+          class: 'food',
+          style: 'bottom: ' + y + '%; left: ' + x + '%;'
+      }).appendTo('#insert-food');
+
+      var square = document.querySelector('#' + id);
+
+      setTimeout(function () {
+         new mojs.Tween({
+           repeat:   0,
+           delay:    100,
+           onUpdate: function (progress) {
+             var bounceProgress = mojs.easing.bounce.out(progress);
+             square.style.transform = 'translateY(' + $('#card').height()*1.25*bounceProgress + 'px)';
+           }
+         }).run();   
+      }, delay);
    }
 
 });
