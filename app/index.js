@@ -45,14 +45,16 @@ window.addEventListener('load', function () {
    }
 
    function checkAnswer () {
-      if (current.name === input.val()) {
-         setRandom();
-         // addScore();
-         input.val(null);
-         sponsers[0].logos.shift();
+      if (input.val()) {
+         if (current.name === input.val().toLowerCase()) {
+            setRandom();
+            // addScore();
+            input.val(null);
+            sponsers[0].logos.shift();
          if (!sponsers[0].logos.length) sponsers.shift();
-      } else {
-         // error();
+         } else {
+            // error();
+         }   
       }
    }
 
