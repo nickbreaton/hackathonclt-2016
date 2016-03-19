@@ -26,9 +26,9 @@ img {
 }
 
 .food {
-   width: 10%;
-   height: 10%;
-   background: red;
-   opacity: 0.5;
    position: absolute;
+   opacity: .05;
+   background-repeat: no-repeat;
+   background-size: contain;
+   /*background-size: 100%;*/
 }
