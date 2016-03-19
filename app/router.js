@@ -1,4 +1,5 @@
 window.addEventListener('load', function () {
+  window.ref = new Firebase("https://hackathonclt2016.firebaseio.com/");
   window.app = { };
   // page.base('/#!');
   page('/', function () {
@@ -20,6 +21,7 @@ window.addEventListener('load', function () {
   });
   page('/food-storage', function () {
     app.route = 'food-storage';
+    food();
     reload();
   });
   page('*', function () {

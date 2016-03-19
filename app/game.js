@@ -1,7 +1,6 @@
 function game () {
    var current = {};
 
-   var ref = new Firebase("https://hackathonclt2016.firebaseio.com/");
    var img = $('#logo');
    var input = $('input[type="text"]')
    var skip = $('#skip');
