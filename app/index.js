@@ -75,6 +75,9 @@ window.addEventListener('load', function () {
       $(window).scrollTop(0)
    }
 
+   // TEMP
+   $(document).click(nextFood);
+
    var foodR = 0;
    var foodC = 0;
    function nextFood () {
@@ -92,11 +95,17 @@ window.addEventListener('load', function () {
       var x = Math.random()*2 + - 1 + (i * 10);
       var y = Math.random()*2 + - 1 + (j * 10) + 125;
       var id = 'food-' + Math.random().toString(30).substring(15);
+      var size = 10;
+      var icon = Math.floor(Math.random()*30);
 
       $('<div/>', {
           id: id,
           class: 'food',
-          style: 'bottom: ' + y + '%; left: ' + x + '%;'
+          style: 'width: ' + size + '%;' 
+                  + 'height: ' + size + '%;' 
+                  + 'bottom: ' + y + '%;' 
+                  + 'left: ' + x + '%;'
+                  + 'background-image: url(/assets/food-icons/'+ icon +'.svg)',
       }).appendTo('#insert-food');
 
       var square = document.querySelector('#' + id);
