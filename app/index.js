@@ -50,7 +50,7 @@ window.addEventListener('load', function () {
 
    function setRandom () {
       current = sponsers[0].logos[0];
-      img.attr('src', current.url); 
+      img.attr('src', current.url);
    }
 
    function checkAnswer () {
@@ -63,7 +63,7 @@ window.addEventListener('load', function () {
          } else {
             input.addClass('invalid');
             // error();
-         }   
+         }
       }
    }
 
@@ -84,23 +84,23 @@ window.addEventListener('load', function () {
             foodC++;
          }
          setFood(foodR, foodC, Math.floor(Math.random() * 500));
-         foodR++;   
+         foodR++;
       }
    }
 
    function setFood (i, j, delay) {
       var x = Math.random()*2 + - 1 + (i * 10);
       var y = Math.random()*2 + - 1 + (j * 10) + 125;
-      var id = 'food-' + Math.random().toString(30).substring(15);
+      var id = 'food-' + new String(Math.random()).replace('.', '');
       var size = 10;
       var icon = Math.floor(Math.random()*30) + 1;
 
       $('<div/>', {
           id: id,
           class: 'food',
-          style: 'width: ' + size + '%;' 
-                  + 'height: ' + size + '%;' 
-                  + 'bottom: ' + y + '%;' 
+          style: 'width: ' + size + '%;'
+                  + 'height: ' + size + '%;'
+                  + 'bottom: ' + y + '%;'
                   + 'left: ' + x + '%;'
                   + 'background-image: url(/assets/food-icons/'+ icon +'.svg)',
       }).appendTo('#insert-food');
@@ -115,7 +115,7 @@ window.addEventListener('load', function () {
              var bounceProgress = mojs.easing.bounce.out(progress);
              square.style.transform = 'translateY(' + $('#card').height()*1.25*bounceProgress + 'px)';
            }
-         }).run();   
+         }).run();
       }, delay);
    }
 
