@@ -1,3 +1,22 @@
-.main {
-   margin: auto;
+.container {
+   max-width: 500px;
+
+}
+
+body {
+   background: lightgrey;
+}
+
+.viewer {
+   text-align: center;
+}
+
+img {
+   margin-bottom: 25px;
+}
+
+.input {
+   text-align: center;
+   font-size: 20px !important;
+   color: black;
 }
