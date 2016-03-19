@@ -32,3 +32,8 @@ img {
    opacity: 0.5;
    position: absolute;
 }
+
+#answer {
+   background-color: white;
+   opacity: 0.9;
+}

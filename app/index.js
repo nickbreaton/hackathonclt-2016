@@ -59,6 +59,7 @@ window.addEventListener('load', function () {
             // addScore();
             nextFood();
             next();
+            Materialize.fadeInImage('#logo')
          } else {
             input.addClass('invalid');
             // error();
