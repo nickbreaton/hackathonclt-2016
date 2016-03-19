@@ -31,7 +31,7 @@ window.addEventListener('load', function () {
 
    setTimeout(function () {
       setRandom();
-   }, 1500);
+   }, 3000);
 
    $(document).keydown(function (event) {
       if (event.which === 13) {
