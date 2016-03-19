@@ -49,3 +49,15 @@ img {
 #count {
   color: #EE6E73;
 }
+
+@media (min-width: 600px) {
+  .top-right {
+    position: fixed !important;
+    top: 20px;
+    right: 20px;
+  }
+
+  .floater {
+    
+  }
+}

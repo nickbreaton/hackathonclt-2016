@@ -11,8 +11,8 @@ window.addEventListener('load', function () {
     reload();
     game();
   });
-  page('/brands', function () {
-    app.route = 'brands';
+  page('/sponsers', function () {
+    app.route = 'sponsers';
     reload();
   });
   page('/coupon', function () {

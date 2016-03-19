@@ -11,7 +11,7 @@
 
    <script src="/app/game.js"></script>
    <script src="/app/router.js"></script>
-   <script src="/app/brands.js"></script>
+   <script src="/app/sponsers.js"></script>
    <script src="/app/coupon.js"></script>
    <script src="/app/food-storage.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,15 +49,15 @@
             </div>
             <div id="home" class="route hide">
               <div class="collection">
-                 <a href="/game" class="collection-item">Food Raise</a>
-                 <a href="/brands" class="collection-item">Brands</a>
+                 <a href="/game" class="collection-item">Play to Feed</a>
+                 <a href="/sponsers" class="collection-item">Sponsers</a>
                  <a href="/food-storage" class="collection-item">Food Storage</a>
                  <a href="/coupon" class="collection-item">Coupon</a>
               </div>
             </div>
 
-            <div id="brands" class="route hide">
-              brands
+            <div id="sponsers" class="route hide">
+              sponsers
             </div>
 
             <div id="food-storage" class="route hide">
@@ -90,15 +90,16 @@
 
         </div>
       </div>
-      <div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">
-        <a class="btn-floating btn-large red">
+      <div class="fixed-action-btn vertical click-to-toggle" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large" style="background-color: #EE6E73;">
           <i class="large mdi-navigation-menu"></i>
         </a>
         <ul>
-          <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-          <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-          <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-          <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+          <li><a href="/" class="btn-floating red"><b class="material-icons">H</b></a></li>
+          <li><a href="/game" class="btn-floating blue"><b class="material-icons">P</b></a></li>
+          <li><a href="/sponsers" class="btn-floating blue"><b class="material-icons">S</b></a></li>
+          <li><a href="/food-storage" class="btn-floating blue"><b class="material-icons">T</b></a></li>
+          <li><a href="/coupon" class="btn-floating blue"><b class="material-icons">C</b></a></li>
         </ul>
       </div>
    </div>
