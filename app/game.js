@@ -83,16 +83,28 @@ function game () {
       $(window).scrollTop(0)
    }
 
+   function win () {
+     $('#modal1').openModal();
+     $('.food').remove();
+   }
+
    var foodR = 0;
    var foodC = 0;
    function nextFood () {
-      for (var i = 0; i < 10; i++) {
+
+      for (var i = 0; i < 20; i++) {
          if (foodR === 10) {
             foodR = 0;
             foodC++;
          }
          setFood(foodR, foodC, Math.floor(Math.random() * 500));
          foodR++;
+      }
+
+      if (foodC === 9 ) {
+        foodR = 0;
+        foodC = 0;
+        win();
       }
    }
 
