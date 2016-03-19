@@ -18,6 +18,7 @@ window.addEventListener('load', function () {
    });
 
    function load () {
+      var remaining = sponsers.length;
       sponsers.forEach(function (sponser) {
          ref.child('sponsers/' + sponser.name).once('value', function (data) {
             data.forEach(function (logo) {
@@ -26,13 +27,14 @@ window.addEventListener('load', function () {
                   url: logo.val()
                });
             });
+            remaining--;
+            if (remaining === 0) {
+               $('.hide').removeClass('hide');
+               setRandom();
+            }
          });
       });
    }
-
-   setTimeout(function () {
-      setRandom();
-   }, 3000);
 
    $(document).keydown(function (event) {
       if (event.which === 13) {
