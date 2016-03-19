@@ -74,9 +74,6 @@ window.addEventListener('load', function () {
       $(window).scrollTop(0)
    }
 
-   // TEMP
-   $(document).click(nextFood);
-
    var foodR = 0;
    var foodC = 0;
    function nextFood () {
@@ -95,7 +92,7 @@ window.addEventListener('load', function () {
       var y = Math.random()*2 + - 1 + (j * 10) + 125;
       var id = 'food-' + Math.random().toString(30).substring(15);
       var size = 10;
-      var icon = Math.floor(Math.random()*30);
+      var icon = Math.floor(Math.random()*30) + 1;
 
       $('<div/>', {
           id: id,
