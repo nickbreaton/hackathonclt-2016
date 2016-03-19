@@ -58,6 +58,15 @@ img {
   }
 
   .floater {
-    
+
   }
+}
+
+.home-container {
+  height: 450px;
+}
+
+.home-item {
+  height: 25% !important;
+  color: white !important;
 }
