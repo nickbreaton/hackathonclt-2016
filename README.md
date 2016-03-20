@@ -2,6 +2,8 @@
 
 ##### First Place in Code Category
 
+###### Contributions by [Jeremy Bohannon](https://github.com/jeremybohannon), [Itgel (Jack) Ganbold](https://github.com/iganbold), and [Nick Breaton](https://github.com/nickbreaton)
+
 <br/>
 <img width="550" src="https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xpt1/v/t1.0-9/5388_1072769579413116_9172914847566973145_n.jpg?oh=bb280f482258a9d9d80192282d6d5d13&oe=574ED28F">
 
